@@ -27,26 +27,9 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body {
-  background: var(--ink);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(233,30,140,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(233,30,140,0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-  z-index: 0;
-}
+body { background: var(--ink); color: var(--text); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(233,30,140,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(233,30,140,0.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 40px 24px 80px; position: relative; z-index: 1; }
-
-/* HEADER */
 header { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
 .header-left { display: flex; flex-direction: column; gap: 14px; }
 .logo-area { display: flex; align-items: center; gap: 12px; }
@@ -64,8 +47,6 @@ h1 span { color: var(--text3); font-weight: 400; }
 .period b { color: var(--text); font-weight: 600; }
 .print-btn { padding: 10px 18px; background: var(--pink-dim); border: 1px solid rgba(233,30,140,0.3); border-radius: 8px; color: var(--pink); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: all .2s; }
 .print-btn:hover { background: rgba(233,30,140,0.2); }
-
-/* KPIs */
 .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 36px; }
 .kpi { background: var(--panel); padding: 20px 16px; position: relative; transition: background .2s; }
 .kpi:hover { background: var(--panel-2); }
@@ -75,22 +56,16 @@ h1 span { color: var(--text3); font-weight: 400; }
 .kpi.accent { background: linear-gradient(160deg, var(--panel-2), var(--panel)); }
 .kpi.accent::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--pink), transparent); }
 .kpi.accent .kpi-value { color: var(--pink); }
-
-/* SECTIONS */
 section { margin-bottom: 36px; }
 .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; gap: 12px; flex-wrap: wrap; }
 .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
 .section-title .idx { font-family: 'JetBrains Mono', monospace; color: var(--pink); font-size: 12px; font-weight: 400; }
 .section-note { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--slate-dim); max-width: 360px; text-align: right; line-height: 1.6; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
-
-/* CHARTS */
 .legend-row { display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
 .legend-item { display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--slate); }
 .legend-swatch { width: 14px; height: 3px; border-radius: 2px; }
 .chart-box { height: 240px; }
-
-/* ACCOUNTS */
 .accounts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .acc-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
 .acc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
@@ -100,8 +75,6 @@ section { margin-bottom: 36px; }
 .acc-metric-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .06em; color: var(--text3); margin-bottom: 4px; }
 .acc-metric-value { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; }
 .acc-bar-chart { height: 120px; }
-
-/* TABLE */
 .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; min-width: 600px; }
 thead th { text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .06em; color: var(--text3); font-weight: 500; padding: 0 12px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
@@ -127,38 +100,14 @@ tbody td.num { text-align: right; font-family: 'JetBrains Mono', monospace; }
 .mini-table { margin-top: 20px; }
 .mini-table thead th { padding-bottom: 10px; }
 .mini-table tbody td { padding: 10px 12px; font-size: 12px; }
-
-/* FOOTER */
+.cpa-value { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--violet); }
+.cpa-dash { color: var(--slate-dim); }
 footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text3); line-height: 1.8; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .footer-brand { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; }
 .footer-brand span { color: var(--pink); }
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .kpis { grid-template-columns: repeat(3, 1fr); }
-  .accounts-grid { grid-template-columns: 1fr; }
-  .section-note { text-align: left; max-width: 100%; }
-  .header-right { align-items: flex-start; }
-  .period { text-align: left; }
-}
-@media (max-width: 600px) {
-  .wrap { padding: 24px 16px 60px; }
-  header { flex-direction: column; }
-  .kpis { grid-template-columns: repeat(2, 1fr); }
-  .kpi.accent { grid-column: span 2; }
-  h1 { font-size: 20px; }
-  .chart-box { height: 200px; }
-  .acc-bar-chart { height: 100px; }
-  .section-head { flex-direction: column; }
-  footer { flex-direction: column; }
-  .print-btn { width: 100%; text-align: center; }
-}
-
-@media print {
-  body::before { display: none; }
-  .print-btn { display: none; }
-  .wrap { padding: 20px; }
-}
+@media (max-width: 900px) { .kpis { grid-template-columns: repeat(3, 1fr); } .accounts-grid { grid-template-columns: 1fr; } .section-note { text-align: left; max-width: 100%; } .header-right { align-items: flex-start; } .period { text-align: left; } }
+@media (max-width: 600px) { .wrap { padding: 24px 16px 60px; } header { flex-direction: column; } .kpis { grid-template-columns: repeat(2, 1fr); } .kpi.accent { grid-column: span 2; } h1 { font-size: 20px; } .chart-box { height: 200px; } .acc-bar-chart { height: 100px; } .section-head { flex-direction: column; } footer { flex-direction: column; } .print-btn { width: 100%; text-align: center; } }
+@media print { body::before { display: none; } .print-btn { display: none; } .wrap { padding: 20px; } }
 </style>
 </head>
 <body>
@@ -261,8 +210,8 @@ footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line);
 
   <section>
     <div class="section-head">
-      <div class="section-title"><span class="idx">04</span>Mensagens × Contratos</div>
-      <div class="section-note">Contratos com origem Kommo · Mar e Mai confirmados</div>
+      <div class="section-title"><span class="idx">04</span>Mensagens × Contratos × CPA</div>
+      <div class="section-note">Contratos com origem Kommo · CPA = Investimento / Contratos fechados</div>
     </div>
     <div class="card">
       <div class="legend-row">
@@ -274,8 +223,13 @@ footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line);
         <table class="mini-table">
           <thead>
             <tr>
-              <th>Mês</th><th class="num">Mensagens</th>
-              <th class="num">Contratos</th><th class="num">Conversão</th><th>Status</th>
+              <th>Mês</th>
+              <th class="num">Mensagens</th>
+              <th class="num">Investimento</th>
+              <th class="num">Contratos</th>
+              <th class="num">Conversão</th>
+              <th class="num">CPA</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody id="msgContractsBody"></tbody>
@@ -287,8 +241,8 @@ footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line);
   <footer>
     <div>
       Fonte: Meta Ads Manager · "Novas mensagens" = Messaging conversations started.<br>
-      Contratos (Mar e Mai): origem Kommo · Dashboard de Indicadores Marcos Pimentel.<br>
-      Gerado Jan–Jun 2026.
+      CPA = Investimento total do mês / Contratos fechados com origem Kommo.<br>
+      Contratos (Mar e Mai): Dashboard de Indicadores Marcos Pimentel · Demais meses aguardando.
     </div>
     <div style="text-align:right">
       <div class="footer-brand">Arial <span>Black</span></div>
@@ -314,14 +268,38 @@ document.getElementById('kpi-msgs').textContent=fmtInt(totalMsgs);
 document.getElementById('kpi-msgs-sub').textContent='MP '+fmtInt(sum(mp.msgs))+'  ·  PB '+fmtInt(sum(pb.msgs));
 document.getElementById('kpi-cpm').textContent=fmtBRL(totalSpend/totalMsgs);
 document.getElementById('kpi-spend').textContent=fmtBRL(totalSpend);
+
 new Chart(document.getElementById('trendChart'),{type:'bar',data:{labels:months,datasets:[{type:'bar',label:'Novas mensagens',data:total.msgs,backgroundColor:'rgba(233,30,140,0.7)',borderRadius:6,yAxisID:'y',order:3,barPercentage:0.5},{type:'line',label:'Impressões',data:total.impr,borderColor:'#34D1BF',tension:.35,yAxisID:'y1',pointRadius:4,pointBackgroundColor:'#34D1BF',order:1,borderWidth:2},{type:'line',label:'Cliques',data:total.clicks,borderColor:'#FF6B57',tension:.35,yAxisID:'y2',pointRadius:4,pointBackgroundColor:'#FF6B57',order:2,borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a2e',borderColor:'rgba(255,255,255,0.08)',borderWidth:1,padding:12,bodyFont:{family:"'JetBrains Mono'",size:12},callbacks:{label:ctx=>' '+ctx.dataset.label+': '+fmtInt(ctx.raw)}}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#666'}},y:{position:'left',grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'rgba(233,30,140,0.8)',callback:v=>fmtInt(v)}},y1:{position:'right',grid:{display:false},ticks:{color:'#34D1BF',callback:v=>(v/1000)+'k'}},y2:{position:'right',display:false,grid:{display:false}}}}});
+
 function miniBar(id,data,color){new Chart(document.getElementById(id),{type:'bar',data:{labels:months,datasets:[{data,backgroundColor:color,borderRadius:5,barPercentage:0.6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a2e',borderColor:'rgba(255,255,255,0.08)',borderWidth:1,padding:10,bodyFont:{family:"'JetBrains Mono'",size:12},callbacks:{label:ctx=>' Mensagens: '+fmtInt(ctx.raw)}}},scales:{x:{grid:{display:false},ticks:{color:'#666',font:{size:10}}},y:{display:false}}}});}
 miniBar('mpBarChart',mp.msgs,'rgba(255,178,56,0.7)');
 miniBar('pbBarChart',pb.msgs,'rgba(52,209,191,0.7)');
+
 const contracts=[null,null,57,null,179,null];
 new Chart(document.getElementById('msgContractsChart'),{data:{labels:months,datasets:[{type:'bar',label:'Novas mensagens',data:total.msgs,backgroundColor:'rgba(233,30,140,0.6)',borderRadius:6,barPercentage:0.45,categoryPercentage:0.7,yAxisID:'y'},{type:'bar',label:'Contratos fechados',data:contracts,backgroundColor:'rgba(156,140,255,0.7)',borderRadius:6,barPercentage:0.45,categoryPercentage:0.7,yAxisID:'y1'}]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{display:false},tooltip:{backgroundColor:'#1a1a2e',borderColor:'rgba(255,255,255,0.08)',borderWidth:1,padding:12,bodyFont:{family:"'JetBrains Mono'",size:12},callbacks:{label:ctx=>ctx.raw===null?' '+ctx.dataset.label+': aguardando dado':' '+ctx.dataset.label+': '+fmtInt(ctx.raw)}}},scales:{x:{grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'#666'}},y:{position:'left',grid:{color:'rgba(255,255,255,0.04)'},ticks:{color:'rgba(233,30,140,0.8)',callback:v=>fmtInt(v)}},y1:{position:'right',grid:{display:false},ticks:{color:'#9C8CFF',callback:v=>fmtInt(v)}}}}});
+
 const mcBody=document.getElementById('msgContractsBody');
-months.forEach((m,i)=>{const msgs=total.msgs[i],c=contracts[i],hasData=c!==null;const conv=hasData?((c/msgs)*100).toFixed(1).replace('.',',')+'%':'—';const tr=document.createElement('tr');if(!hasData)tr.classList.add('dim-row');tr.innerHTML=`<td>${m}</td><td class="num">${fmtInt(msgs)}</td><td class="num">${hasData?fmtInt(c):'—'}</td><td class="num">${conv}</td><td>${hasData?'<span class="status-pill ok">CONFIRMADO</span>':'<span class="status-pill pending">AGUARDANDO</span>'}</td>`;mcBody.appendChild(tr);});
+months.forEach((m,i)=>{
+  const msgs=total.msgs[i];
+  const spend=total.spend[i];
+  const c=contracts[i];
+  const hasData=c!==null;
+  const conv=hasData?((c/msgs)*100).toFixed(1).replace('.',',')+'%':'—';
+  const cpa=hasData?fmtBRL(spend/c):'—';
+  const tr=document.createElement('tr');
+  if(!hasData) tr.classList.add('dim-row');
+  tr.innerHTML=`
+    <td>${m}</td>
+    <td class="num">${fmtInt(msgs)}</td>
+    <td class="num">${fmtBRL(spend)}</td>
+    <td class="num">${hasData?fmtInt(c):'—'}</td>
+    <td class="num">${conv}</td>
+    <td class="num ${hasData?'cpa-value':'cpa-dash'}">${cpa}</td>
+    <td>${hasData?'<span class="status-pill ok">CONFIRMADO</span>':'<span class="status-pill pending">AGUARDANDO</span>'}</td>
+  `;
+  mcBody.appendChild(tr);
+});
+
 const creatives=[{acct:'pb',name:'AD01',camp:'MSG · Sul e Sudeste · Auxílio Acidente',impr:843303,clicks:5746,msgs:1898,cpm:5.88,spend:11153.18},{acct:'pb',name:'AD03',camp:'MSG · ES · Base Potencial VV50% · IG',impr:247375,clicks:7003,msgs:1205,cpm:4.63,spend:5582.66},{acct:'pb',name:'AD01',camp:'MSG · ES · Auxílio Acidente · IG',impr:865561,clicks:5148,msgs:1131,cpm:9.58,spend:10837.48},{acct:'mp',name:'Video Pricila',camp:'[CBO][WAPP] RMC -08/10',impr:457697,clicks:10007,msgs:990,cpm:5.05,spend:4996.67},{acct:'mp',name:'AD01',camp:'[CBO][WAPP] RMC -08/10',impr:315525,clicks:5879,msgs:636,cpm:6.69,spend:4256.82},{acct:'mp',name:'ADS 6 — Cópia',camp:'[CBO][WHATSAPP][BPC LOAS]',impr:88160,clicks:3448,msgs:484,cpm:3.75,spend:1812.85},{acct:'pb',name:'AD01',camp:'MSG · ES · Base Potencial VV50% · IG',impr:143345,clicks:3271,msgs:382,cpm:9.50,spend:3630.09},{acct:'mp',name:'ADS01 - Video IG',camp:'[CBO][WHATSAPP][BPC LOAS]',impr:75714,clicks:2111,msgs:424,cpm:4.19,spend:1778.18}];
 creatives.sort((a,b)=>b.msgs-a.msgs);
 const maxMsgs=creatives[0].msgs;
